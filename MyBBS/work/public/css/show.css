@@ -1,0 +1,136 @@
+body {
+  text-align: center;
+  background-color: #fffffc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-style: italic;
+}
+
+/*** フォーム ***/
+textarea, button {
+  margin: 0 auto 10px;
+}
+
+input {
+  font-size: 16px;
+}
+
+textarea {
+  font-size: 16px;
+  resize: none;
+  min-height: 50px;
+  width: 100%;
+}
+
+button {
+  font-size: 14px;
+  width: 100px;
+  color: #0080ff;
+  background-color: #cce6ff;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 30px;
+  border: 2px solid #7fbfff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.delete {
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+}
+
+/*** 投稿 ***/
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  padding: 10px 20px 10px;
+  margin: 0 auto 15px;
+  width: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #7fbfff;
+  position: relative;
+}
+
+.post:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.prof {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+
+.prof > .date {
+  font-size: 12px;
+  color: #666;
+}
+
+.main-text {
+  text-align: center;
+}
+
+.delete-form {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/*** コメントフォーム ***/
+.comment-form {
+  text-align: left;
+}
+
+.comment:first-of-type {
+  margin-top: 60px;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+
+/*** コメント ***/
+.comment {
+  background-color: #fff;
+  padding: 10px 20px 10px;
+  margin: 0 auto 30px;
+  width: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid orange;
+  position: relative;
+}
+
+.comment:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.comment-text {
+  width: 95%;
+  text-align: left;
+}
+
+.comment-delete-form {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
