@@ -26,16 +26,16 @@ class Bbs {
         case 'comment_create':
           $bbs_id = trim(filter_input(INPUT_POST, 'id'));
           $this->comment_create();
-          header('Location: http://localhost:8562/show.php?id=' . $bbs_id);
+          header('Location: ' . $_SERVER['HTTP_REFERER']);
           exit;
         case 'comment_delete':
           $bbs_id = trim(filter_input(INPUT_POST, 'id'));
           $this->comment_delete();
-          header('Location: http://localhost:8562/show.php?id=' . $bbs_id);
+          header('Location: ' . $_SERVER['HTTP_REFERER']);
           exit;
         case 'search':
           $search = trim(filter_input(INPUT_POST, 'search'));
-          header('Location: http://localhost:8562/result.php?search=' . $search);
+          header('Location: ' . $_SERVER['HTTP_HOST'] . $search);
           $this->bbs_search();
           exit;
         default:
