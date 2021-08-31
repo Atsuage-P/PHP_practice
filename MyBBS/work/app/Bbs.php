@@ -35,7 +35,7 @@ class Bbs {
           exit;
         case 'search':
           $search = trim(filter_input(INPUT_POST, 'search'));
-          header('Location: ' . $_SERVER['HTTP_HOST'] . $search);
+          header('Location: ' . '/result.php?search=' . $search);
           $this->bbs_search();
           exit;
         default:
