@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>My BBS</title>
     </head>
-
     <body>
         <h1>My BBS</h1>
         <ul>
