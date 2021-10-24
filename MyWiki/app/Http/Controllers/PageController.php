@@ -28,7 +28,9 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.form', [
+            'page' => new Page(),
+        ]);
     }
 
     /**
@@ -48,9 +50,10 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Page $page)
     {
-        //
+        return view('pages.show')
+            ->with(['page' => $page,]);
     }
 
     /**
@@ -59,7 +62,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Page $page)
     {
         //
     }
@@ -71,7 +74,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Page $page)
     {
         //
     }
@@ -82,7 +85,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Page $page)
     {
         //
     }

@@ -13,4 +13,19 @@ class Page extends Model
         'title',
         'body',
     ];
+
+    public function url()
+    {
+        return route('pages.show', $this->title);
+    }
+
+    public function getUrlAttribute()
+    {
+        return $this->url();
+    }
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'title';
+    // }
 }
