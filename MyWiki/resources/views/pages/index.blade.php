@@ -10,8 +10,8 @@
     <ul>
         @forelse ($pages as $page)
             <li>
-                {{-- <a href="{{ route('pages.show', $page) }}"> --}}
-                <a href="{{ $page->url }}">
+                <a href="{{ route('pages.show', $page) }}">
+                {{-- <a href="{{ $page->url }}"> --}}
                     {{ $page->title }}
                 </a>
             </li>

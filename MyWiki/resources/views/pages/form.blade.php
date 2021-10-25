@@ -17,7 +17,6 @@
 
     @if ($page->id)
         <form action="/pages/{{ $page->title }}" method="POST">
-            {{ method_field('PUT') }}
     @else
         <form action="/pages" method="POST">
     @endif
