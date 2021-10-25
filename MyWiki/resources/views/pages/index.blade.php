@@ -5,7 +5,7 @@
 
     <h1>
         <span>My Wiki</span>
-        {{-- <a href="{{ route('pages.create') }}">[Add]</a> --}}
+        <a href="{{ route('pages.create') }}">[Add]</a>
     </h1>
     <ul>
         @forelse ($pages as $page)
