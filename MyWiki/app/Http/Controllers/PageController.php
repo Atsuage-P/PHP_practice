@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Page;
 
 class PageController extends Controller
@@ -28,7 +29,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('pages.form', [
+        return view('pages.create', [
             'page' => new Page(),
         ]);
     }
@@ -41,7 +42,14 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required’ | unique:pages, title',
+            'body' => 'required',
+        ]);
+
+        $post = Page::create($request->all());
+
+        return redirect()->route('pages.show', $post);
     }
 
     /**
@@ -64,7 +72,9 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+        return view('pages.edit', [
+            'page' => $page,
+        ]);
     }
 
     /**
@@ -76,7 +86,14 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $request->validate([
+            'title' => 'required', Rule::unique('pages')->ignore($page->id),
+            'body'  => 'required',
+        ]);
+
+        $page->update($request->all());
+
+        return redirect()->route('pages.show', $page);
     }
 
     /**
