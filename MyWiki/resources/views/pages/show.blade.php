@@ -8,6 +8,6 @@
         <a href="{{ route('pages.edit', $page) }}">[Edit]</a>
     </h1>
     <div>
-        {{ $page->body }}
+        {!! $page->markdown_body !!}
     </div>
 </x-layout>

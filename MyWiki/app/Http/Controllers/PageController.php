@@ -43,8 +43,8 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required’ | unique:pages, title',
-            'body' => 'required',
+            'title' => 'required | unique:pages',
+            'body'  => 'required',
         ]);
 
         $post = Page::create($request->all());

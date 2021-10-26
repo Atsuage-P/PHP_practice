@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use cebe\markdown\Markdown as Markdown;
 
 class Page extends Model
 {
@@ -28,4 +29,16 @@ class Page extends Model
     // {
     //     return 'title';
     // }
+
+    public function parse()
+    {
+        $parser = new Markdown();
+
+        return $parser->parse($this->body);
+    }
+
+    public function getMarkdownBodyAttribute()
+    {
+        return $this->parse();
+    }
 }
