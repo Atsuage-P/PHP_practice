@@ -27,10 +27,13 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $page = new Page();
+        $page->title = $request->title;
+
         return view('pages.create', [
-            'page' => new Page(),
+            'page' => $page,
         ]);
     }
 
@@ -58,8 +61,16 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(string $title)
     {
+        $page = Page::whereTitle($title)->first();
+
+        if (!$page)
+        {
+            $page = new Page();
+            $page->title = $title;
+        }
+
         return view('pages.show')
             ->with(['page' => $page,]);
     }

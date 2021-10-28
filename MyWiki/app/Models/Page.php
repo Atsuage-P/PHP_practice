@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use cebe\markdown\Markdown as Markdown;
+// use cebe\markdown\Markdown as Markdown;
+use App\Models\WikiMarkdown as Markdown;
 
 class Page extends Model
 {
@@ -25,10 +26,10 @@ class Page extends Model
         return $this->url();
     }
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'title';
-    // }
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
 
     public function parse()
     {
