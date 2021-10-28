@@ -28,9 +28,7 @@
 
         <div>
             <label class="control-label">Body</label>
-            <textarea name="body" class="form-control" id="" cols="30" rows="10">
-                {{ old('title', $page->title) }}
-            </textarea>
+            <textarea name="body" class="form-control" id="" cols="30" rows="10">{{ old('title', $page->body) }}</textarea>
         </div>
         <input type="submit" class="form-control">
     </form>
